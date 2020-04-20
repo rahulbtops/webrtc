@@ -16,24 +16,16 @@ class App extends Component {
 
   componentDidMount = () => {
 
-    // 'https://3116f1c6.ngrok.io/webrtcPeer',
     this.socket = io.connect(
-      'https://8c0ed4d3.ngrok.io/webrtcPeer',
+      'https://fda5d43d.ngrok.io/webrtcPeer',
       {
         path: '/io/webrtc',
         query: {}
       }
     )
-    // this.socket = io.connect(
-    //   '/webrtcPeer',
-    //   {
-    //     path: '/io/webrtc',
-    //     query: {}
-    //   }
-    // )
 
     this.socket.on('connection-success', success => {
-      console.log("success: ", success)
+      console.log(success)
     })
 
     this.socket.on('offerOrAnswer', (sdp) => {
@@ -146,7 +138,7 @@ class App extends Component {
     // initiates the creation of SDP
     this.pc.createOffer({ offerToReceiveVideo: 1 })
       .then(sdp => {
-        console.log(JSON.stringify(sdp))
+        // console.log(JSON.stringify(sdp))
 
         // set offer sdp as local description
         this.pc.setLocalDescription(sdp)
@@ -161,7 +153,7 @@ class App extends Component {
     console.log('Answer')
     this.pc.createAnswer({ offerToReceiveVideo: 1 })
       .then(sdp => {
-        console.log(JSON.stringify(sdp))
+        // console.log(JSON.stringify(sdp))
 
         // set answer sdp as local description
         this.pc.setLocalDescription(sdp)
