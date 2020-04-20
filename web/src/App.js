@@ -17,7 +17,7 @@ class App extends Component {
   componentDidMount = () => {
 
     this.socket = io.connect(
-      'https://fda5d43d.ngrok.io/webrtcPeer',
+      'https://3824512a.ngrok.io/webrtcPeer',
       {
         path: '/io/webrtc',
         query: {}

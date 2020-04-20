@@ -50,7 +50,7 @@ class App extends React.Component {
   componentDidMount = () => {
 
     this.socket = io.connect(
-      'https://fda5d43d.ngrok.io/webrtcPeer',
+      'https://3824512a.ngrok.io/webrtcPeer',
       {
         path: '/io/webrtc',
         query: {}
@@ -237,7 +237,7 @@ class App extends React.Component {
     return (
 
       <SafeAreaView style={{ flex: 1, }}>
-        <StatusBar backgroundColor="blue" barStyle={'dark-content'} />
+        {/* <StatusBar backgroundColor="blue" barStyle={'dark-content'} /> */}
         <View style={{ ...styles.buttonsContainer }}>
           <View style={{ flex: 1, }}>
             <TouchableOpacity onPress={this.createOffer}>

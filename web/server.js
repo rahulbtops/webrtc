@@ -14,7 +14,6 @@ const port = 8080
 //https://expressjs.com/en/guide/writing-middleware.html
 app.use(express.static(__dirname + '/build'))
 app.get('/', (req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.sendFile(__dirname + '/build/index.html')
 })
