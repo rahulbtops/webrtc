@@ -107,9 +107,11 @@ class App extends React.Component {
     this.pc.onaddstream = (e) => {
       debugger
       // this.remoteVideoref.current.srcObject = e.streams[0]
-      this.setState({
-        remoteStream: e.stream
-      })
+      setTimeout(() => {
+        this.setState({
+          remoteStream: e.stream
+        })
+      }, 3000);
     }
 
     const success = (stream) => {
